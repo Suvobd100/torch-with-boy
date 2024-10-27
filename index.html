@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- icon -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <!-- tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- font -->
@@ -31,20 +34,36 @@
 </head>
 <body class="">
     <header class="font-prociono bg-body">
+        <!-- bg-body -->
+        
         <section class="text-secondary w-screen h-screen">
-            <nav class="flex justify-between w-11/12 mx-auto items-center">
-                <a href=""><img class="w-9 h-7 mt-10" src="./images/mummy-logo.png" alt="">
-                    <span>bD2.0</span>
-                </a>
-                <ul class="flex gap-8">
-                    <li class="hover:text-primary transition-colors ease-in ease-out duration-300 "><a href="#">H <span class="border-b-2">O</span>ME</a></li>
-                    <li class="hover:text-primary transition-colors ease-in ease-out duration-300"><a href="#">History</a></li>
-                    <li class="hover:text-primary transition-colors ease-in ease-out duration-300"><a href="#">Contribution</a></li>
-                    <li class="px-5 py-3 rounded-md font-semibold bg-primary text-black -mt-1"><a href="#">Donate</a></li>
-                </ul>
-            </nav>
+            <!-- menu start -->
+            <section class="flex justify-between w-11/12 mx-auto items-center">
+                
+                    <h1>
+                        <a href=""><img class="w-9 h-7 mt-10" src="./images/mummy-logo.png" alt="">
+                            <span>bD2.0</span>
+                        </a>
+                    </h1>
+                    
+                <nav class="hidden md:block"> 
+                    <ul class="flex gap-8 mt-8 md:static absolute md:w-auto md:py-0 opacity-0 md:opacity-100">
+                        <li class="hover:text-primary transition-colors ease-in ease-out duration-300 "><a href="#">H <span class="border-b-2">O</span>ME</a></li>
+                        <li class="hover:text-primary transition-colors ease-in ease-out duration-300"><a href="#">History</a></li>
+                        <li class="hover:text-primary transition-colors ease-in ease-out duration-300"><a href="#">Contribution</a></li>
+                        <li class="px-5 py-3 rounded-md font-semibold bg-primary text-black -mt-1"><a href="#">Donate</a></li>
+                    </ul>
+                </nav>
+                <button id="hamburger-menu" class="md:hidden text-3xl cursor-pointer">
+                    <ion-icon name="menu-outline" onclick="Menu(this)">
+                    
+                    </ion-icon>
+                </button>
+            </section>
+            
+            
             <!-- hero section start -->
-             <section>
+             <section class="mt-8">
                 <!-- wrapper div start -->
                 <div class=" grid md:grid-cols-2 grid-col-1 w-11/12 mx-auto gap-4">
                         <!-- slogan start -->
@@ -84,6 +103,18 @@
         </section>
     </header>
     <main></main>
-    <footer></footer>
+    <footer>
+
+    </footer>
+    <!-- js for hamburger menu start -->
+    <script>
+        function Menu(e)
+        {
+            let list = document.querySelector('ul');
+            e.name=== 'menu' ? (e.name = "close" ,list.classList.add('top-[90%]') ,list.classList.add('opacity-100')) : (e.name = 
+            "menu", list.classList.remove('top-[70%]'),list.classList.remove('opacity-100'))
+            console.log(e.name)
+        }
+    </script> 
 </body>
 </html>
